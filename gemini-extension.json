@@ -1,0 +1,10 @@
+{
+  "name": "right-suite",
+  "version": "1.0.0",
+  "description": "Test price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers from Gemini CLI. Uses Right Suite's hosted MCP server.",
+  "mcpServers": {
+    "right-suite": {
+      "httpUrl": "https://www.rightsuite.co/api/mcp"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "right-suite": {
+      "type": "http",
+      "url": "https://www.rightsuite.co/api/mcp"
+    }
+  }
+}

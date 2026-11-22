@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "right-suite",
+  "version": "1.0.0",
+  "description": "Test your price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers before you launch. Ask your AI assistant whether buyers would pay $29, whether your landing page hero lands, or which audience to sell to first, and Right Suite runs it past simulated buyers modelled on your audience. In 10 to 20 minutes you get a verdict, the objections that came up most, and what to change.",
+  "author": {
+    "name": "Wednesday Solutions",
+    "email": "support@rightsuite.co",
+    "url": "https://www.rightsuite.co"
+  },
+  "homepage": "https://www.rightsuite.co/mcp?utm_source=agent_plugin&utm_medium=directory&utm_campaign=mcp_listings",
+  "repository": "https://github.com/wednesday-solutions/right-suite-mcp",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "pricing",
+    "price-testing",
+    "landing-page",
+    "cold-email",
+    "ad-testing",
+    "positioning",
+    "go-to-market",
+    "market-research",
+    "customer-research",
+    "synthetic-users",
+    "ai-personas",
+    "founders",
+    "startups",
+    "marketing",
+    "mcp"
+  ]
+}

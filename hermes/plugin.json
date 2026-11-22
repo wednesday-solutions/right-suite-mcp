@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "right-suite",
+  "version": "1.0.0",
+  "description": "Test price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers from Hermes, through Right Suite's hosted MCP server. Runs use your Right Suite credits.",
+  "author": {
+    "name": "Wednesday Solutions",
+    "url": "https://www.rightsuite.co"
+  },
+  "homepage": "https://www.rightsuite.co/mcp",
+  "repository": "https://github.com/wednesday-solutions/right-suite-mcp",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "pricing",
+    "price-testing",
+    "landing-page",
+    "cold-email",
+    "ad-testing",
+    "positioning",
+    "go-to-market",
+    "market-research",
+    "customer-research",
+    "synthetic-users",
+    "ai-personas",
+    "founders",
+    "startups",
+    "marketing",
+    "mcp"
+  ],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "right-suite": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
+}
