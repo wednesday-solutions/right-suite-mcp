@@ -21,5 +21,5 @@ Right Suite is a hosted remote MCP server. There is nothing to download, build o
 
 Troubleshooting:
 - Runs need credits. If `get_credits` shows none, the user can pick a plan at https://www.rightsuite.co.
-- Run tools return a `runId` right away; call `get_report` with it after a few minutes. Runs take about 10 to 20 minutes.
+- Run tools return a `runId` right away. Runs take about 10 to 20 minutes; follow along by calling `get_report` with `waitSeconds: 45` and the `sinceCursor` it returns, and tell the user what is new after each call.
 - Help: support@rightsuite.co

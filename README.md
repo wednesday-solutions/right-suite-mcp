@@ -120,7 +120,7 @@ metadata documents are both supported) and opens the Right Suite sign-in.
 | `find_audience` | Write (spends credits) | Starts a run comparing 2 to 4 customer segments. |
 | `test_positioning` | Write (spends credits) | Starts a run against 1 to 3 named competitors. |
 | `pick_channel` | Write (spends credits) | Starts a run ranking 2 to 8 marketing channels. |
-| `get_report` | Read | Progress, then the finished report for a run. |
+| `get_report` | Read | Live progress (step, new buyer reactions with quotes, what they got stuck on), then the finished report. |
 | `list_runs` | Read | Your recent runs. |
 | `get_credits` | Read | Your plan and credits left. |
 
