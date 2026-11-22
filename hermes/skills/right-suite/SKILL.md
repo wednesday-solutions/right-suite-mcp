@@ -40,10 +40,18 @@ an ad, write it yourself; offer to test the draft with Right Suite afterwards.
 
 ## During and after a run
 
-- A run tool returns a `runId` right away. Runs take about 10 to 20 minutes. Tell the user that,
-  and that you can check on it whenever they like.
-- Call `get_report` with the `runId` to check progress or fetch the finished report. Do not poll in
-  a tight loop; check when the user asks or after a few minutes.
+- A run tool returns a `runId` right away. Runs take about 10 to 20 minutes. Tell the user it has
+  started and give them the dashboard link.
+- Then follow the run live instead of going quiet. Call `get_report` with the `runId`, then keep
+  calling it with `waitSeconds: 45` and `sinceCursor` set to the `cursor` from the previous call.
+  Each call waits on the server and comes back as soon as something new happens: a new step, a
+  batch of buyers reacting, or the run finishing.
+- After every call, tell the user in a line or two what is new: the step it is on, how many buyers
+  have reacted, what they are getting stuck on, and one short quote from a new reaction. Skip a
+  call's update if nothing meaningful changed.
+- Do not wait or pause between calls yourself; the server does the waiting. Stop when `status` is
+  `completed` or `failed`, or when the user asks you to stop. If they do, tell them they can ask
+  you to check on it later.
 - If you lost the `runId`, call `list_runs`.
 - When the report is ready, lead with the verdict, then the top objections, then the changes to
   make, in plain words. Give the dashboard link for the full report.
@@ -56,4 +64,5 @@ Do not show the user tool names, ids or JSON unless they ask.
 ## Done when
 
 - The user knew what would be tested and what it costs before any run started.
-- The user has the verdict, the main objections and what to change, or knows when to check back.
+- The user saw the run progress as it happened, and has the verdict, the main objections and what
+  to change, or knows how to check back.

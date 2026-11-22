@@ -62,7 +62,7 @@ The server provides these tools at run time.
 |---|---|---|---|
 | `get_credits` | Read | No | Your plan and credits left. |
 | `list_runs` | Read | No | Your recent runs. |
-| `get_report` | Read | No | Progress, then the finished report for a run. |
+| `get_report` | Read | No | Live progress (step, new buyer reactions with quotes, what they got stuck on), then the finished report. |
 | `test_price` | Write (credits) | Yes | Starts a price test. |
 | `test_landing_page` | Write (credits) | Yes | Starts a landing page or marketing copy test. |
 | `test_cold_email` | Write (credits) | Yes | Starts a cold email or DM test. |
