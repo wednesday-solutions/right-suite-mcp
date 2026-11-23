@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "right-suite",
-  "version": "1.0.0",
-  "description": "Test your price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers before you launch. Ask whether buyers would pay $29, whether your landing page lands, or who to sell to first. In 10 to 20 minutes you get a verdict, the top objections and what to change.",
+  "version": "1.0.1",
+  "description": "Test your price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers before you launch. Ask what buyers would pay, whether your landing page lands, or who to sell to first. In 10 to 20 minutes you get a verdict, the top objections and what to change.",
   "author": {
     "name": "Wednesday Solutions",
     "email": "support@rightsuite.co",
@@ -27,7 +27,7 @@
       "interface": {
         "displayName": "Right Suite",
         "shortDescription": "Test your price on AI buyers",
-        "longDescription": "Right Suite shows your price, landing page, cold email, ad or positioning to 100+ AI-simulated buyers modelled on the audience you describe, before you spend a dollar on launch.\n\nAsk things like \"would SaaS founders pay $29 a month for this?\", \"roast my landing page hero\", \"will this cold email get replies?\" or \"who should I sell to first?\". Right Suite starts a run, shows progress as buyers react, and comes back with a verdict, the objections that came up most, real quotes and the changes to make.\n\nSeven tools: price testing, landing page and copy testing, cold email and DM testing, ad testing, audience finding, positioning against competitors, and channel picking. Runs use your Right Suite credits; new accounts get free credits to start.",
+        "longDescription": "Right Suite shows your price, landing page, cold email, ad or positioning to 100+ AI-simulated buyers modelled on the audience you describe, before you launch.\n\nAsk things like \"what would SaaS founders pay for this?\", \"roast my landing page hero\", \"will this cold email get replies?\" or \"who should I sell to first?\". Right Suite starts a run, shows progress as buyers react, and comes back with a verdict, the objections that came up most, real quotes and the changes to make.\n\nSeven tools: price testing, landing page and copy testing, cold email and DM testing, ad testing, audience finding, positioning against competitors, and channel picking. Each run uses credits from your Right Suite account.",
         "developerName": "Wednesday Solutions",
         "category": "Business & Operations",
         "capabilities": [
@@ -45,7 +45,7 @@
         "privacyPolicyURL": "https://www.rightsuite.co/privacy",
         "termsOfServiceURL": "https://www.rightsuite.co/terms",
         "defaultPrompt": [
-          "Would solo founders pay $29 a month for my product?",
+          "What would solo founders pay for my product?",
           "Roast my landing page hero before I launch",
           "Will this cold email get replies from agency owners?"
         ],
@@ -58,7 +58,7 @@
           "positive": [
             {
               "description": "Price test",
-              "prompt": "Use Right Suite to test whether freelance designers would pay $19/month for an invoicing app that chases late payments automatically. Depth 1.",
+              "prompt": "Use Right Suite to test what freelance designers would pay monthly for an invoicing app that chases late payments automatically. Depth 1.",
               "tools_triggered": "test_price, get_report",
               "expected_behavior": "Confirms what will be tested and the 1-credit cost, starts a run, returns a runId and dashboard link, follows progress with get_report and summarises the verdict, top objections and suggested price."
             },
