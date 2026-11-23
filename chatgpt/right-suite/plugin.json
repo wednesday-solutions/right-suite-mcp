@@ -1,0 +1,111 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "right-suite",
+  "version": "1.0.1",
+  "description": "Test your price, landing page, cold email, ads and positioning on 100+ AI-simulated buyers before you launch. Ask what buyers would pay, whether your landing page lands, or who to sell to first. In 10 to 20 minutes you get a verdict, the top objections and what to change.",
+  "author": {
+    "name": "Wednesday Solutions",
+    "email": "support@rightsuite.co",
+    "url": "https://www.rightsuite.co"
+  },
+  "homepage": "https://www.rightsuite.co/mcp",
+  "repository": "https://github.com/wednesday-solutions/right-suite-mcp",
+  "keywords": [
+    "pricing",
+    "landing-page",
+    "cold-email",
+    "ad-testing",
+    "positioning",
+    "market-research",
+    "synthetic-users",
+    "founders",
+    "startups"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/right-suite/SKILL.md",
+      "interface": {
+        "displayName": "Right Suite",
+        "shortDescription": "Test your price on AI buyers",
+        "longDescription": "Right Suite shows your price, landing page, cold email, ad or positioning to 100+ AI-simulated buyers modelled on the audience you describe, before you launch.\n\nAsk things like \"what would SaaS founders pay for this?\", \"roast my landing page hero\", \"will this cold email get replies?\" or \"who should I sell to first?\". Right Suite starts a run, shows progress as buyers react, and comes back with a verdict, the objections that came up most, real quotes and the changes to make.\n\nSeven tools: price testing, landing page and copy testing, cold email and DM testing, ad testing, audience finding, positioning against competitors, and channel picking. Each run uses credits from your Right Suite account.",
+        "developerName": "Wednesday Solutions",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Test a price on simulated buyers",
+          "Test a landing page or marketing copy",
+          "Test a cold email or DM",
+          "Test an ad",
+          "Find the best audience to sell to first",
+          "Test positioning against competitors",
+          "Pick a marketing channel",
+          "Follow a run live and read the report"
+        ],
+        "websiteURL": "https://www.rightsuite.co",
+        "supportURL": "https://www.rightsuite.co/mcp",
+        "privacyPolicyURL": "https://www.rightsuite.co/privacy",
+        "termsOfServiceURL": "https://www.rightsuite.co/terms",
+        "defaultPrompt": [
+          "What would solo founders pay for my product?",
+          "Roast my landing page hero before I launch",
+          "Will this cold email get replies from agency owners?"
+        ],
+        "brandColor": "#0D9488",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Price test",
+              "prompt": "Use Right Suite to test what freelance designers would pay monthly for an invoicing app that chases late payments automatically. Depth 1.",
+              "tools_triggered": "test_price, get_report",
+              "expected_behavior": "Confirms what will be tested and the 1-credit cost, starts a run, returns a runId and dashboard link, follows progress with get_report and summarises the verdict, top objections and suggested price."
+            },
+            {
+              "description": "Landing page test",
+              "prompt": "Test this landing page hero on early-stage SaaS founders: 'Know what to charge before you launch. Test your price on 100 AI buyers in 15 minutes.'",
+              "tools_triggered": "test_landing_page, get_report",
+              "expected_behavior": "Starts a landing page run for the stated audience, reports progress, then gives the verdict, what confused or convinced buyers, and copy changes."
+            },
+            {
+              "description": "Cold email test",
+              "prompt": "Will this cold email get replies from marketing agency owners? Subject: Quick question about your client reporting. Body: Hi, we built a tool that turns client reports into a 2-minute video. Worth a look?",
+              "tools_triggered": "test_cold_email, get_report",
+              "expected_behavior": "Starts a cold email run, follows it, and reports the predicted reply intent, killer lines and a rewrite suggestion."
+            },
+            {
+              "description": "Check credits",
+              "prompt": "How many Right Suite credits do I have left?",
+              "tools_triggered": "get_credits",
+              "expected_behavior": "Returns the user's current credit balance in plain words."
+            },
+            {
+              "description": "List runs",
+              "prompt": "Show me my recent Right Suite runs.",
+              "tools_triggered": "list_runs",
+              "expected_behavior": "Lists recent runs with their product, status and date, and offers to open a report."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Copywriting only, no test asked",
+              "prompt": "Write me a cold email for selling bookkeeping services to dentists."
+            },
+            {
+              "description": "Unrelated question",
+              "prompt": "What's the weather in London tomorrow?"
+            },
+            {
+              "description": "General pricing theory",
+              "prompt": "Explain the difference between value-based and cost-plus pricing."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First release: seven go-to-market tests on AI-simulated buyers, with live run progress in chat."
+      }
+    }
+  }
+}
